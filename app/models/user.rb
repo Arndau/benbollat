@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
   has_many :biens, dependent: :destroy
 
-  has_one_attached :profilepic
+  has_one_attached :avatar
 end
