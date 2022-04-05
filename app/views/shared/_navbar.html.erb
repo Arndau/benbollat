@@ -30,8 +30,8 @@
               <%= button_to "Log out", destroy_user_session_path, method: :delete %>
           </li>
           <li class="nav-item dropdown">
-            <%# <%= "#{@user.email}"%> %>
-            <%# <%= cl_image_tag @user.profilepic, height: 300, width: 400, crop: :fill %> %>
+            <%# <%= "#{@user.email}"%>
+            <%= cl_image_tag @user.profilepic, height: 300, width: 400, crop: :fill
             <%# <%= image_tag "#{current_user.profilepic}", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %> %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Mon compte", edit_user_registration_path, class: "dropdown-item" %>
