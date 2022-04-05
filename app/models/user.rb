@@ -9,11 +9,10 @@ class User < ApplicationRecord
 
 
   def profile_picture
-    if profilepic.attached?
-      profilepic.key
+    if avatar.attached?
+      avatar.key
     else
       "default_profile_pic.png"
     end
   end
-
 end
