@@ -3,31 +3,11 @@
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
 
-    <div class="form-group">
-      <div class="row">
-        <div class="col-sm-4">
-            <%# <div class="profilepic"> %>
-              <% if resource.avatar.attached? %>
-                  <%= image_tag current_user.avatar, class: "avatar"%>
-              <% else %>
-                <%= image_tag('default_profile_pic.png', width: "100%")%>
-              <% end %>
-            <%# </div> %>
-        </div>
-
-        <div class="col-sm-8">
-          <%= f.input :profilepic, as: :file %>
-        </div>
-      </div>
-    </div>
-
     <div class="form-inputs">
       <%= f.input :email, required: true, autofocus: true %>
-
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
       <% end %>
-
       <%= f.input :password,
                   hint: "leave it blank if you don't want to change it",
                   required: false,
@@ -39,7 +19,8 @@
                   hint: "we need your current password to confirm your changes",
                   required: true,
                   input_html: { autocomplete: "current-password" } %>
-      <%= f.input :image, as: :file, label: "Photo de profile" %>
+      <%= f.input :avatar, as: :file, label: "Photo de profile" %>
+      <%= cl_image_upload_tag(:image_id) %>
     </div>
 
     <div class="form-actions">
