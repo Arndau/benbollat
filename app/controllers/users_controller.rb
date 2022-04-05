@@ -1,36 +1,35 @@
  class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :create]
 
-  # def create
-  #   @user = User.new(user_params)
-  #   @bien.user = current_user
-  #   authorize @user
+  def create
+    @user = User.new(user_params)
+    authorize @user
 
-  #   if @user.save
-  #     redirect_to index_path(@user)
-  #   else
-  #     render :new
-  #   end
-  # end
+    if @user.save
+      redirect_to index_path(@user)
+    else
+      render :new
+    end
+  end
 
-  # def show
-  #   @user = current_user
-  #   @user = User.find(params[:id])
-  #   authorize @user
-  # end
+  def show
+    @user = current_user
+    @user = User.find(params[:id])
+    authorize @user
+  end
 
-  # def destroy
-  #   @user.destroy
-  # end
+  def destroy
+    @user.destroy
+  end
 
-  #  private
+   private
 
-  # def set_user
-  #   @users = User.find(params[:id])
-  #   authorize @user
-  # end
+  def set_user
+    @users = User.find(params[:id])
+    authorize @user
+  end
 
-  # def user_params
-  #   params.require(:user).permit(:email, :profilepic)
-  # end
+  def user_params
+    params.require(:user).permit(:email, :profilepic, :surnom)
+  end
 end
