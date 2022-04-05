@@ -6,8 +6,8 @@
     <div class="form-group">
       <div class="row">
         <div class="col-sm-4">
-          <% if resource.profilepic.attached? %>
-          <%= image_tag resource.profilepic%>
+          <% if resource.avatar.attached? %>
+          <%= image_tag resource.avatar%>
           <% else %>
             <%= image_tag('default_profile_pic.png')%>
           <% end %>
