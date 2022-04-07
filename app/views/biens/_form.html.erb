@@ -3,7 +3,9 @@
     <%= f.input :ville %>
     <%= f.input :address,
            input_html: { data: { geocoder_target: "address" } },
-           wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
+           wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } },
+           hint: "nom de la rue ou du quartier/ code postale / ville"%>
+
     <%= f.input :loyé %>
     <%= f.input :meublé, as: :select, collection: [['Oui',true], ['Non',false]], required: false, include_blank: false %>
     <%= f.input :saisonnié, as: :select, collection: [['Oui',true], ['Non',false]], required: false, include_blank: false %>

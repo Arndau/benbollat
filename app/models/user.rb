@@ -12,7 +12,7 @@ class User < ApplicationRecord
     if avatar.attached?
       avatar.key
     else
-      "default_profile_pic.png"
+      "default_profile_pic_xl837y"
     end
   end
 

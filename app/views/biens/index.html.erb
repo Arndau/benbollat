@@ -12,7 +12,7 @@
     <%= cl_image_tag bien.user.profile_picture,style:"width: 40px; height: 40px;crop: :fill; position: absolute; margin-left: 100px; margin-top: 10px",class: "avatar-bordered" %>
       <div class="card-product">
         <%# <%= image_tag "#{@bien.image1}"%>
-         <%= cl_image_tag bien.image1.key %>
+         <%= cl_image_tag bien.bien_picture %>
         <div class="card-product-infos1">
           <h1><%= bien.user.surnom %></h1><br>
           <h2><%= bien.ville %></h2> <br>
