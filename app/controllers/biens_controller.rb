@@ -12,6 +12,7 @@ class BiensController < ApplicationController
         {
           lat: bien.latitude,
           lng: bien.longitude,
+          html: render_to_string(partial: "_marker", locals: { user: bien.user, bien: bien}),
           info_window: render_to_string(partial: "info_window", locals: { bien: bien })
         }
       end

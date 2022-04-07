@@ -1,0 +1,4 @@
+<div>
+    <%= link_to bien_path(bien) do %>
+      <%= cl_image_tag bien.user.profile_picture,style:"width: 40px; height: 40px;crop: :fill; position: absolute; margin-left: 100px; margin-top: 10px",class: "avatar-bordered" %>
+    <% end %>
