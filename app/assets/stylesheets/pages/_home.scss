@@ -1,1 +1,88 @@
 // Specific CSS for your home-page
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.btn-yours {
+  width: 365px;
+  height: 75px;
+  padding: 34px 46px;
+  border: none;
+  outline: none;
+  color: rgb(192, 102, 188);
+  background: rgb(255, 255, 255);
+  cursor: pointer;
+  //position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  color: #111;
+  font-weight: bold;
+  position: absolute; /* or absolute */
+  top: 42%;
+  left: 35%;
+
+}
+
+.btn-yours:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.btn-yours:active {
+  color: transparent; //rgb(255, 255, 255)
+}
+
+.btn-yours:active:after {
+  background: transparent;
+}
+
+.btn-yours:hover:before {
+  opacity: 1;
+}
+
+.btn-yours:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(255, 255, 255);
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}

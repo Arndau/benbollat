@@ -2,19 +2,18 @@
 
   <% @biens_mine.each do |bien| %>
     <div class="card-product">
-      <%# <%= image_tag "#{bien.image1}"%> %>
-      <%= cl_image_tag bien.image1.key%>
-      <%# <img src=<%="#{bien.image1}"%> alt="..."> %>
+      <%# <%= image_tag "#{bien.image1}"%>
+      <%= cl_image_tag bien.bien_picture %>
       <div class="card-product-infos">
-        <h3><%= bien.user.surnom%></h3>
+        <%# <h3><%= bien.user.surnom%></h3>
         <h5>
           <%= bien.ville %>
         </h5>
-        <p>
-          Loyé:<%= bien.loyé%>€/mois<br>
-         <%=bien.meublé == true ? "Meublé" : "Non meublé"%><br>
-         <%=bien.disponible == true ? "Pas encore loué" : "Loué"%>
-        </p>
+        <%# <p> %>
+          <%# Loyé:<%= bien.loyé%>
+         <%# <%=bien.meublé == true ? "Meublé" : "Non meublé"%>
+         <%# <%=bien.disponible == true ? "Pas encore loué" : "Loué"%>
+        <%# </p> %>
         <div class="links">
           <ul>
             <li>
