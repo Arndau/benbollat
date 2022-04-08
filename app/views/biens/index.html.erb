@@ -9,7 +9,7 @@
 <div class="cardscontainer">
   <% @biens.each do |bien| %>
     <%= link_to bien_path(bien) do %>
-    <%= cl_image_tag bien.user.profile_picture,style:"width: 40px; height: 40px;crop: :fill; position: absolute; margin-left: 100px; margin-top: 10px",class: "avatar-bordered" %>
+    <%= cl_image_tag bien.user.profile_picture,style:"width: 40px; height: 40px;crop: :fill; border-radius: 50px; position: absolute; margin-left: 100px; margin-top: 10px"%>
       <div class="card-product">
         <%# <%= image_tag "#{@bien.image1}"%>
          <%= cl_image_tag bien.bien_picture %>
