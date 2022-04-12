@@ -11,7 +11,15 @@ class Bien < ApplicationRecord
 
   def bien_picture
     if images.attached?
-      images[1].key
+      images[0].key
+    else
+      "bien-par_defaut_shvulu"
+    end
+  end
+
+  def bien_picture_carousel
+    if image.attached?
+      image.key
     else
       "bien-par_defaut_shvulu"
     end
