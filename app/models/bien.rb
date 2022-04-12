@@ -7,11 +7,11 @@ class Bien < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
-  has_one_attached :image1
+  has_many_attached :images
 
   def bien_picture
-    if image1.attached?
-      image1.key
+    if images.attached?
+      images[1].key
     else
       "bien-par_defaut_shvulu"
     end

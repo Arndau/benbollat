@@ -10,7 +10,9 @@
     <%= f.input :meublé, as: :select, collection: [['Oui',true], ['Non',false]], required: false, include_blank: false %>
     <%= f.input :saisonnié, as: :select, collection: [['Oui',true], ['Non',false]], required: false, include_blank: false %>
     <%= f.input :disponible, as: :select, collection: [['Oui',true], ['Non',false]], required: false, include_blank: false %>
-    <%= f.input :media, as: :file, :multiple => true, name: "post[post_attachments_attributes][][media]" %>
+    <%# <%= f.file_field :images, multiple: true, class: 'form-control'%>
+    <%# <%= f.input :photo, as: :file %>
+      <%= f.input :images, as: :file, input_html: { multiple: true } %>
     <%= f.submit "Ajouter ce bien", class: "secondary-button" %>
   <% end %>
 </div>

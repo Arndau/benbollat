@@ -34,10 +34,10 @@ class BiensController < ApplicationController
     @bien = Bien.new
     authorize @bien
   end
-
   def create
     @bien = Bien.new(bien_params)
     @bien.user=current_user
+    # raise
     @bien.save!
     redirect_to biens_path(@bien)
     authorize @bien
@@ -65,7 +65,7 @@ class BiensController < ApplicationController
   private
 
   def bien_params
-    params.require(:bien).permit(:ville, :image1, :image2, :image3, :address, :loyé, :meublé, :saisonnié, :disponible, :user_id)
+    params.require(:bien).permit(:ville, :address, :loyé, :meublé, :saisonnié, :disponible, images: [])
   end
 
 end
