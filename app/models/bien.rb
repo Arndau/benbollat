@@ -18,8 +18,10 @@ class Bien < ApplicationRecord
   end
 
   def bien_picture_carousel
-    if image.attached?
-      image.key
+    if images.attached?
+      # images.each do |image|
+        image.key
+      # end
     else
       "bien-par_defaut_shvulu"
     end
