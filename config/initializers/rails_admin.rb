@@ -20,6 +20,8 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.included_models = [ "Bien", "User" ]
+
   ## == PaperTrail ==
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
 
