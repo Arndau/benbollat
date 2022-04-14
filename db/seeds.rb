@@ -12,6 +12,7 @@ User.destroy_all
 user3= User.create!(surnom: "test_user", email: "test@gmail.com", password: "123456")
 user1= User.create!(surnom: "Johny_be_good", email: "meli@gmail.com", password: "123456")
 user2= User.create!(surnom: "Cindy Loper", email: "arnaud@gmail.com", password: "123456")
+user4= User.create!(surnom: "Mr patate", email: "mrpatate@gmail.com", password: "123456", admin: true)
 
 # bien1 = Bien.create!(image1: "https://mlyeu5smerl9.i.optimole.com/mThIyFo-47jNyRgg/w:auto/h:auto/q:auto/https://nosincontournables.com/wp-content/uploads/2020/09/versailles-chateau-scaled.jpg", image2: "https://cdn.radiofrance.fr/s3/cruiser-production/2021/03/f08b828e-a9dc-491a-98ae-9b6616d753b8/870x489_index.jpg", image3:"https://static8.depositphotos.com/1003348/867/i/600/depositphotos_8674342-stock-photo-pura-ulun-danu.jpg", ville: "Chagnolet", address: "21 rue du moulin 17139 Dompierre Sur Mer", loyé: 1300, user: user1)
 # bien2 = Bien.create!(image1: "https://mlyeu5smerl9.i.optimole.com/mThIyFo-47jNyRgg/w:auto/h:auto/q:auto/https://nosincontournables.com/wp-content/uploads/2020/09/versailles-chateau-scaled.jpg", image2: "https://cdn.radiofrance.fr/s3/cruiser-production/2021/03/f08b828e-a9dc-491a-98ae-9b6616d753b8/870x489_index.jpg", image3:"https://static8.depositphotos.com/1003348/867/i/600/depositphotos_8674342-stock-photo-pura-ulun-danu.jpg", ville: "Paris", address: "6 rue scheffer 75016 Paris", loyé: 3200, user: user1)
