@@ -18,6 +18,7 @@ RailsAdmin.config do |config|
       flash[:alert] = 'Sorry, no admin access for you.'
       redirect_to main_app.root_path
     end
+  end
 
   ## == PaperTrail ==
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
