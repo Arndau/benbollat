@@ -19,7 +19,7 @@ RailsAdmin.config do |config|
       redirect_to main_app.root_path
     end
   end
-
+  ## permet de dire a quelle model à accès le user
   config.included_models = [ "Bien", "User" ]
 
   ## == PaperTrail ==
