@@ -14,7 +14,7 @@ RailsAdmin.config do |config|
   ## == Pundit ==
   # config.authorize_with :pundit
   config.authorize_with do
-    unless current_user.super_admin?
+    unless current_user.admin? || current_user.super_admin?
       flash[:alert] = 'Sorry, no super admin power for you.'
       redirect_to main_app.root_path
     end
@@ -31,19 +31,18 @@ RailsAdmin.config do |config|
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar = true
 
-  config.actions do
-    dashboard                     # mandatory
-    index                         # mandatory
-    new
-    export
-    bulk_delete
-    show
-    edit
-    delete
-    show_in_app
-
-    ## With an audit adapter, you can add:
-    # history_index
-    # history_show
-  end
+    config.actions do
+        dashboard                     # mandatory
+        index                         # mandatory
+        new
+        export
+        bulk_delete
+        show
+        edit
+        delete
+        show_in_app
+      ## With an audit adapter, you can add:
+      # history_index
+      # history_show
+    end
 end
