@@ -14,12 +14,12 @@ RailsAdmin.config do |config|
   ## == Pundit ==
   # config.authorize_with :pundit
   config.authorize_with do
-    unless current_user.admin?
-      flash[:alert] = 'Sorry, no admin access for you.'
+    unless current_user.super_admin?
+      flash[:alert] = 'Sorry, no super admin power for you.'
       redirect_to main_app.root_path
     end
   end
-  ## permet de dire a quelle model à accès le user
+  ## permet de dire a quelles modeles peut modifier le user
   config.included_models = [ "Bien", "User" ]
 
   ## == PaperTrail ==
