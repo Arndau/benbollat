@@ -48,12 +48,15 @@
   </div>
 
   <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+  <div class="bookform">
     <h2>Book now</h2>
-
     <%= simple_form_for :search, method: "get" do |f| %>
-      <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.button :submit, "Go", class: "btn btn-primary" %>
-    <% end %>
+    <div class="d-flex">
+      <%= f.input :starts_at,:label => "Your stay", :placeholder => "choose range", as: :string, required: false, input_html: { id: "range_start", :rows => 10 } %>
+      <%# <%= f.input :ends_at, as: :string, required: false, input_html: { id: "range_end" } %>
+      <%= f.button :submit, "Book now", class: "bookbtn btn-primary" %>
+      <% end %>
+    </div>
+    </div>
   </div>
 </div>
