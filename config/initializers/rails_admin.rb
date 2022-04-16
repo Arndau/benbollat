@@ -55,10 +55,4 @@ RailsAdmin.config do |config|
     # history_show
   end
 
-  configure :admin do
-    read_only do
-      bindings[:view]._current_user.super_admin?
-    end
-  end
-
 end
