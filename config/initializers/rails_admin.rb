@@ -1,5 +1,4 @@
 RailsAdmin.config do |config|
-
   ### Popular gems integration
 
   ## == Devise ==
@@ -39,28 +38,27 @@ RailsAdmin.config do |config|
   #   end
   # end
 
-  config.model User do
-    list do
-      configure :admin do
-        hide
-      end
-    end
-  end
 
 
   config.actions do
-      dashboard                     # mandatory
-      index                         # mandatory
-      new
-      export
-      bulk_delete
-      show
-      edit
-      delete
-      show_in_app
+    dashboard                     # mandatory
+    index                         # mandatory
+    new
+    export
+    bulk_delete
+    show
+    edit
+    delete
+    show_in_app
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+  end
+
+  configure :admin do
+    read_only do
+      bindings[:view]._current_user.super_admin?
+    end
   end
 
 end

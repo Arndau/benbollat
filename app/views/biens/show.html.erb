@@ -1,47 +1,49 @@
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-  <%# <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div> %>
-  <div class="carousel-inner">
-        <% if @bien.images.attached? %>
-          <% @bien.images.each.with_index do |image, i| %>
-            <div class="carousel-item <%= 'active' if i == 0 %>" data-bs-interval="3000">
-              <%= cl_image_tag image.key, class: 'd-block w-100', style:"width: 100px; height: 300px;crop: :fill; border-radius: 10px;" %>
-            </div>
+<div class="container">
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <%# <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div> %>
+    <div class="carousel-inner">
+          <% if @bien.images.attached? %>
+            <% @bien.images.each.with_index do |image, i| %>
+              <div class="carousel-item <%= 'active' if i == 0 %>" data-bs-interval="3000">
+                <%= cl_image_tag image.key, class: 'd-block w-100', style:"width: 100px; height: 300px;crop: :fill; border-radius: 10px;" %>
+              </div>
+              <% end %>
+            <% else %>
+              <div class="carousel-item active" >
+                <%= cl_image_tag "bien-par_defaut_shvulu", class: 'd-block w-100', style:"width: 100px; height: 300px;crop: :fill; border-radius: 10px;" %>
+              </div>
             <% end %>
-          <% else %>
-            <div class="carousel-item active" >
-              <%= cl_image_tag "bien-par_defaut_shvulu", class: 'd-block w-100', style:"width: 100px; height: 300px;crop: :fill; border-radius: 10px;" %>
-            </div>
-          <% end %>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-<div class="showuserimage">
-  <%= cl_image_tag @bien.user.profile_picture,style:"width: 60px; height: 60px;crop: :fill; border-radius: 50px; position: absolute; margin-left: 10px; margin-top: 10px"%>
-</div>
-<%# <div class="showimagebien">
-  <%= cl_image_tag @bien.bien_picture %>
-<%# </div> %>
+  <div class="showuserimage">
+    <%= cl_image_tag @bien.user.profile_picture,style:"width: 60px; height: 60px;crop: :fill; border-radius: 50px; position: absolute; margin-left: 10px; margin-top: 10px"%>
+  </div>
+  <%# <div class="showimagebien">
+    <%= cl_image_tag @bien.bien_picture %>
+  <%# </div> %>
 
-<div class="showinfos">
-  <p><strong><%= @bien.user.surnom%></strong> est propriétaire de ce bien à  <strong><%=@bien.ville%></strong>.</p>
-  <div class="showville">
+  <div class="showinfos">
+    <p><strong><%= @bien.user.surnom%></strong> est propriétaire de ce bien à  <strong><%=@bien.ville%></strong>.</p>
+    <div class="showville">
+    </div>
+    <div class="showloyé">
+      <p>Loyé : <%=@bien.loyé%>€ mensuel.</p>
+    </div>
+    <div class="showmeublé">
+      <p>Loué en <%=@bien.meublé == true ? "meublé." : "non meublé."%></p>
+    </div>
   </div>
-  <div class="showloyé">
-    <p>Loyé : <%=@bien.loyé%>€ mensuel.</p>
   </div>
-  <div class="showmeublé">
-    <p>Loué en <%=@bien.meublé == true ? "meublé." : "non meublé."%></p>
-  </div>
-</div>
 </div>
