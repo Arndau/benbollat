@@ -12,8 +12,20 @@
   margin-top: 25px;
 }
 
+// #avatar{
+//   margin-left: 10px;
+//   box-shadow: -5px -5px 20px #fff, 5px 5px 20px #babecc;
+//   height: 140;
+//    width: 140;
+// }
+
 #avatar{
   margin-left: 10px;
+  box-shadow: -5px -5px 20px #fff, 5px 5px 20px #babecc;
+  border-radius: 95px;
+    height: 140px;
+    width: 140px;
+    object-fit: cover;
 }
 
 /////
@@ -76,7 +88,7 @@ input:focus {
 button {
  color: #61677c;
  font-weight: bold;
- box-shadow: -5px -5px 20px #fff, 5px 5px 20px #babecc;
+//  box-shadow: -5px -5px 20px #fff, 5px 5px 20px #babecc;
  transition: all 0.2s ease-in-out;
  cursor: pointer;
  font-weight: 600;
