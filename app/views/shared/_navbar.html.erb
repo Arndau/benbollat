@@ -11,7 +11,7 @@
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-       <%= cl_image_tag current_user.profile_picture, height: 60, width: 60, class:"rounded-circle", crop: :fill %>
+      <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -28,7 +28,7 @@
           </li>
           <li class="nav-item">
               <%# <%= button_to "Log out", destroy_user_session_path, method: :delete %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, style:"text-decoration: none; color: black"%>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, style:"text-decoration: none; color: black; border: 1px solid black; padding: 2px; border-radius: 10px"%>
               </div>
           </li>
 
