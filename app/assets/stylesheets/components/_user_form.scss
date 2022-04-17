@@ -1,4 +1,4 @@
-.user_form{
+.user_form_registration{
   margin-top: 10px;
   display: block;
   margin-left: auto;
@@ -6,4 +6,12 @@
   max-width: 400px;
   text-align: center;
   box-shadow: 1px 1px 15px rgba(0,0,0,0.2);
+}
+
+.user_form_edit{
+  margin-top: 25px;
+}
+
+#avatar{
+  margin-left: 10px;
 }

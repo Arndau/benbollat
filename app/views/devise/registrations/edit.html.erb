@@ -1,14 +1,14 @@
 
-<div class="container">
+<div class="user_form_edit">
 
-<div id="profilepic",>
-  <%= cl_image_tag current_user.profile_picture, height: 140, width: 140, class:"rounded-circle", crop: :fill %>
-</div>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
 
     <div class="form-inputs">
+      <div id="avatar",>
+        <%= cl_image_tag current_user.profile_picture, height: 140, width: 140,class:"rounded-circle", crop: :fill %>
+      </div>
       <%= f.input :avatar, as: :file, label: "Photo de profile" %>
       <%# <%= cl_image_upload_tag(:image_id) %>
       <%= f.input :surnom, as: :string, hint: "Conseil : le meme que sur Facebook 😉 "%>
@@ -23,7 +23,7 @@
       <%= f.input :password_confirmation,
                   required: false,
                   input_html: { autocomplete: "new-password" } %>
-      <%= f.input :current_password,
+      <%# <%= f.input :current_password,
                   hint: "we need your current password to confirm your changes",
                   required: true,
                   input_html: { autocomplete: "current-password" } %>
