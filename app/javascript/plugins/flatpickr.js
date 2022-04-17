@@ -9,7 +9,7 @@ const initFlatpickr = () => {
     disable: [
         function(date) {
             // disable every multiple of 8
-            return !(date.getDate() % 8);
+            // return !(date.getDate() % 8);
         }
     ]
   });
