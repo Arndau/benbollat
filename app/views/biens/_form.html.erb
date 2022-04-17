@@ -10,9 +10,11 @@
     <%= f.input :meublé, as: :select, collection: [['Oui',true], ['Non',false]], required: false, include_blank: false %>
     <%= f.input :saisonnié, as: :select, collection: [['Oui',true], ['Non',false]], required: false, include_blank: false %>
     <%= f.input :disponible, as: :select, collection: [['Oui',true], ['Non',false]], required: false, include_blank: false %>
-    <%# <%= f.file_field :images, multiple: true, class: 'form-control'%>
-    <%# <%= f.input :photo, as: :file %>
-      <%= f.input :images, as: :file, input_html: { multiple: true } %>
-    <%= f.submit "Ajouter ce bien", class: "secondary-button" %>
+    <%= f.input :images, as: :file, input_html: { multiple: true } %>
+     <div class="form-actions">
+        <button class="red" type="submit">
+        Ajouter ce bien
+        </button>
+      </div>
   <% end %>
 </div>
