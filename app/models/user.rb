@@ -7,16 +7,6 @@ class User < ApplicationRecord
   has_many :biens, dependent: :destroy
   has_one_attached :avatar
 
-  RailsAdmin.config do |config|
-    config.model User do
-      list do
-        configure :admin do
-          hide
-        end
-      end
-    end
-  end
-
   def profile_picture
     if avatar.attached?
       avatar.key
