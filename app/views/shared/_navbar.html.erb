@@ -27,8 +27,14 @@
             <%= link_to "Mon compte", edit_user_registration_path, class: "dropdown-item" %>
           </li>
           <li class="nav-item">
-              <%= button_to "Log out", destroy_user_session_path, method: :delete %>
+              <%# <%= button_to "Log out", destroy_user_session_path, method: :delete %>
+              <div class="form-actions">
+                <button class="red" type="submit">
+                  Log out
+                </button>
+              </div>
           </li>
+
           <li class="nav-item dropdown">
               <%= cl_image_tag current_user.profile_picture, height: 60, width: 60, class:"rounded-circle", crop: :fill %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
